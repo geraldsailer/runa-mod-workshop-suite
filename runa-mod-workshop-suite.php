@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Runa Mod Workshop Suite
+ * Plugin Name:       RUNA Mod Workshop Suite
  * Plugin URI:        https://example.com
  * Description:       Foundation for the Runa workshop suite including custom post type scaffolding.
  * Version:           0.1.0
@@ -17,6 +17,10 @@ namespace Runa\WorkshopSuite;
 
 if (! defined('ABSPATH')) {
 	exit;
+}
+
+if (! defined('RUNA_WSS_PLUGIN_FILE')) {
+	define('RUNA_WSS_PLUGIN_FILE', __FILE__);
 }
 
 spl_autoload_register(
