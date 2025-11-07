@@ -5,10 +5,12 @@ Custom administration helpers that streamline managing Workshop Suite content in
 ## Features
 
 - Dedicated “Workshop Suite” top-level menu that routes directly to Pods-managed Codes, Kurse, Lektionen, Module und Zielgruppen.
+- Backend-Dashboard mit RUNA-Hub-ähnlicher Navigation inklusive Teilnehmerliste.
 - Cleanup hook that removes the redundant Pods defaults to keep the admin menu tidy.
 - Custom list-table column for the `rna_wss_code` Pod that surfaces each Code’s `rna_wss_codes_quota` value at a glance.
 - Programmatic front-page template with modern login/registration UI, including working E-Mail-Login & Registrierung plus zukünftige Microsoft / Google SSO-Buttons.
 - Backend guard that keeps Frontend-User nach dem Login strikt auf `/dashboard/` (oder dem definierten Ziel) und verweigert wp-admin Zugriff ohne entsprechende Rechte.
+- Frontend-Gate zwingt unangemeldete Besucher auf die Login-Seite, sodass Seiten wie `/agb/` oder `/kurse/` nur eingeloggten Teilnehmern angezeigt werden.
 - Custom Rolle `rna_workshop_participant` (Workshop Teilnehmer) für alle neu registrierten Nutzer inklusive sauberer Aktivierungs-/Deaktivierungs-Logik.
 
 ## Requirements

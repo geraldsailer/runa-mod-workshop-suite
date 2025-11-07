@@ -9,6 +9,11 @@ namespace Runa\WorkshopSuite\Admin;
  */
 final class Menu {
 	private const PARENT_SLUG = 'runa-workshop-suite';
+	private DashboardPage $dashboardPage;
+
+	public function __construct(DashboardPage $dashboardPage) {
+		$this->dashboardPage = $dashboardPage;
+	}
 
 	/**
 	 * Registers the parent menu and links to the Pods-managed post types.
@@ -26,6 +31,15 @@ final class Menu {
 			[$this, 'render_dashboard'],
 			'dashicons-welcome-learn-more',
 			25
+		);
+
+		add_submenu_page(
+			self::PARENT_SLUG,
+			__('Dashboard', 'runa-mod-workshop-suite'),
+			__('Dashboard', 'runa-mod-workshop-suite'),
+			'edit_posts',
+			self::PARENT_SLUG,
+			[$this, 'render_dashboard']
 		);
 
 		add_submenu_page(
@@ -67,9 +81,6 @@ final class Menu {
 			'edit_posts',
 			'edit-tags.php?taxonomy=zielgruppe'
 		);
-
-		// Remove the redundant auto-added submenu that duplicates the parent slug.
-		remove_submenu_page(self::PARENT_SLUG, self::PARENT_SLUG);
 	}
 
 	/**
@@ -91,9 +102,29 @@ final class Menu {
 			wp_die(__('You do not have sufficient permissions to access this page.', 'runa-mod-workshop-suite'));
 		}
 
-		echo '<div class="wrap">';
-		echo '<h1>' . esc_html__('Workshop Suite', 'runa-mod-workshop-suite') . '</h1>';
-		echo '<p>' . esc_html__('Verwalte hier alle Inhalte der Workshop Suite über die Unterpunkte im Menü.', 'runa-mod-workshop-suite') . '</p>';
-		echo '</div>';
+		$this->dashboardPage->render();
+	}
+
+	public function enqueueAssets(string $hook): void {
+		if ($hook !== 'toplevel_page_' . self::PARENT_SLUG) {
+			return;
+		}
+
+		if (! defined('RUNA_WSS_PLUGIN_FILE')) {
+			return;
+		}
+
+		$cssPath = plugin_dir_path(RUNA_WSS_PLUGIN_FILE) . 'assets/css/admin-dashboard.css';
+
+		if (! file_exists($cssPath)) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'runa-wss-admin',
+			plugins_url('assets/css/admin-dashboard.css', RUNA_WSS_PLUGIN_FILE),
+			[],
+			(string) filemtime($cssPath)
+		);
 	}
 }

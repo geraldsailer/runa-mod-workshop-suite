@@ -12,5 +12,7 @@ All notable changes to this project will be documented in this file. The format 
 - Programmatic front-page template with functional email login & registration plus placeholder Microsoft/Google SSO buttons.
 - Admin access guard that redirects Frontend-User unmittelbar nach `/dashboard/` und blockiert wp-admin Zugriffe ohne passende Rechte.
 - Automatische Rolle `rna_workshop_participant` für neue Registrierungen, inkl. Activation-/Deactivation-Hooks.
+- Frontend-Zugriffsschutz, der nicht eingeloggte Besucher konsequent auf die Login-Startseite umleitet.
+- RUNA-Hub-inspiriertes Backend-Dashboard samt Navigation & Teilnehmerliste (mit eigenem Admin-CSS).
 - Auth-Modul ausgelagert unter `src/Auth` inkl. Template-Ordnerstruktur sowie ausgelagertes Styling (`assets/scss/login.scss` → `assets/css/login.css`).
 - Project documentation (`README.md`) and this changelog.
