@@ -1,4 +1,4 @@
-# Runa Mod Workshop Suite
+# RUNA Mod Workshop Suite
 
 Custom administration helpers that streamline managing Workshop Suite content in WordPress. The plugin bundles quality-of-life improvements for Pods-powered post types such as custom menu routing and tailored list-table columns.
 

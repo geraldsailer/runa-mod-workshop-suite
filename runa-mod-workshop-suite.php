@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       RUNA Mod Workshop Suite
+ * Plugin Name:       RUNA Workshop Suite
  * Plugin URI:        https://example.com
  * Description:       Foundation for the Runa workshop suite including custom post type scaffolding.
  * Version:           0.1.0
