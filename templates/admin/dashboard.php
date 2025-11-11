@@ -115,7 +115,7 @@ $baseUrl = admin_url('admin.php?page=runa-workshop-suite');
 								<strong><?php esc_html_e('Kurse', 'runa-mod-workshop-suite'); ?></strong>
 								<span><?php esc_html_e('Bearbeite Kursinhalte', 'runa-mod-workshop-suite'); ?></span>
 							</a>
-							<a class="wss-quick-links__item" href="<?php echo esc_url(admin_url('edit.php?post_type=rna_ws_suite_lektion')); ?>">
+							<a class="wss-quick-links__item" href="<?php echo esc_url(admin_url('edit.php?post_type=rna_wss_lektion')); ?>">
 								<span class="dashicons dashicons-book" aria-hidden="true"></span>
 								<strong><?php esc_html_e('Lektionen', 'runa-mod-workshop-suite'); ?></strong>
 								<span><?php esc_html_e('Organisiere Lektionen', 'runa-mod-workshop-suite'); ?></span>

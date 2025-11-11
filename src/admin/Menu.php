@@ -63,7 +63,7 @@ final class Menu {
 			__('Lektionen', 'runa-mod-workshop-suite'),
 			__('Lektionen', 'runa-mod-workshop-suite'),
 			'edit_posts',
-			'edit.php?post_type=rna_ws_suite_lektion'
+			'edit.php?post_type=rna_wss_lektion'
 		);
 
 		add_submenu_page(
@@ -90,7 +90,7 @@ final class Menu {
 		remove_menu_page('edit.php?post_type=rna_wss_code');
 		remove_menu_page('pods-manage-rna_wss_code');
 		remove_menu_page('edit.php?post_type=rna_ws_suite_course');
-		remove_menu_page('edit.php?post_type=rna_ws_suite_lektion');
+		remove_menu_page('edit.php?post_type=rna_wss_lektion');
 		remove_menu_page('edit.php?post_type=rna_ws_suite_modul');
 	}
 
